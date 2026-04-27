@@ -19,7 +19,6 @@
       color: inherit;
     }
 
-    /* 상단바 */
     .topbar {
       height: 82px;
       padding: 0 48px;
@@ -50,7 +49,6 @@
       border: 2px solid #f5d28a;
     }
 
-    /* 메뉴 중앙 */
     .nav {
       position: absolute;
       left: 50%;
@@ -68,7 +66,24 @@
       color: #f5d28a;
     }
 
-    /* 메인 영역 */
+    .staff-login-btn {
+      margin-left: auto;
+      padding: 10px 22px;
+      border: 1px solid #f5d28a;
+      border-radius: 999px;
+      background: rgba(245, 210, 138, 0.12);
+      color: #f5d28a;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.25s;
+      z-index: 2;
+    }
+
+    .staff-login-btn:hover {
+      background: #f5d28a;
+      color: #3a0816;
+    }
+
     .hero {
       text-align: center;
       padding: 80px 20px 40px;
@@ -97,6 +112,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
     .intro {
@@ -104,7 +120,7 @@
     }
 
     .intro h1 {
-      font-size: 56px; /* 🔥 크게 */
+      font-size: 56px;
       margin-bottom: 12px;
       color: #f5d28a;
       letter-spacing: 3px;
@@ -115,7 +131,6 @@
       color: #e7d3a5;
     }
 
-    /* 바로가기 */
     .quick {
       max-width: 1100px;
       margin: 100px auto;
@@ -169,28 +184,130 @@
       line-height: 1.7;
     }
 
-    /* 반응형 */
+    /* 극단 소개 연혁 팝업 */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.86);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-box {
+      position: relative;
+      max-width: 92vw;
+      max-height: 90vh;
+    }
+
+    .modal-box img {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 14px;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.6);
+      display: block;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: -18px;
+      right: -18px;
+      width: 42px;
+      height: 42px;
+      border: none;
+      border-radius: 50%;
+      background: #f5d28a;
+      color: #3a0816;
+      font-size: 28px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    /* 직원 로그인 박스 */
+    .login-panel {
+      display: none;
+      position: absolute;
+      top: 96px;
+      right: 48px;
+      width: 340px;
+      padding: 28px;
+      border-radius: 18px;
+      background: rgba(28, 4, 12, 0.96);
+      border: 1px solid rgba(245,210,138,0.45);
+      box-shadow: 0 28px 70px rgba(0,0,0,0.5);
+      z-index: 1000;
+    }
+
+    .login-panel.active {
+      display: block;
+    }
+
+    .login-panel h3 {
+      margin: 0 0 8px;
+      color: #f5d28a;
+      font-size: 24px;
+    }
+
+    .login-panel p {
+      margin: 0 0 20px;
+      color: #d9c8a3;
+      font-size: 14px;
+    }
+
+    .login-panel input {
+      width: 100%;
+      height: 46px;
+      padding: 0 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(245,210,138,0.55);
+      background: #120407;
+      color: #f5d28a;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .login-panel input:focus {
+      border-color: #f5d28a;
+      box-shadow: 0 0 0 3px rgba(245,210,138,0.15);
+    }
+
+    .login-submit {
+      margin-top: 14px;
+      width: 100%;
+      height: 46px;
+      border: none;
+      border-radius: 10px;
+      background: #f5d28a;
+      color: #3a0816;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .login-msg {
+      margin-top: 12px;
+      font-size: 14px;
+      color: #ff6b6b;
+      display: none;
+    }
+
     @media (max-width: 900px) {
       .nav { display: none; }
       .quick-grid { grid-template-columns: repeat(2, 1fr); }
+      .login-panel {
+        right: 20px;
+        width: calc(100% - 40px);
+      }
     }
 
     @media (max-width: 560px) {
       .quick-grid { grid-template-columns: 1fr; }
     }
-    .logo-mark {
-  width: 52px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.tree-logo {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
   </style>
 </head>
 
@@ -198,29 +315,7 @@
 
 <header class="topbar">
   <div class="logo">
-   <div class="logo-mark">
-  <svg class="tree-logo" viewBox="0 0 100 100" aria-label="극단 동화나라 나무 로고">
-    <circle cx="50" cy="50" r="46" fill="#fff7e6" stroke="#f5d28a" stroke-width="5"/>
-
-    <path d="M50 66 C48 56, 48 47, 50 38" fill="none" stroke="#b8862b" stroke-width="6" stroke-linecap="round"/>
-    <path d="M50 47 C39 43, 31 35, 28 25" fill="none" stroke="#b8862b" stroke-width="5" stroke-linecap="round"/>
-    <path d="M50 47 C61 43, 69 35, 72 25" fill="none" stroke="#b8862b" stroke-width="5" stroke-linecap="round"/>
-    <path d="M50 55 C39 55, 30 50, 23 42" fill="none" stroke="#b8862b" stroke-width="4" stroke-linecap="round"/>
-    <path d="M50 55 C61 55, 70 50, 77 42" fill="none" stroke="#b8862b" stroke-width="4" stroke-linecap="round"/>
-
-    <circle cx="28" cy="24" r="5" fill="#f5d28a"/>
-    <circle cx="39" cy="20" r="5" fill="#f5d28a"/>
-    <circle cx="50" cy="18" r="5" fill="#f5d28a"/>
-    <circle cx="61" cy="20" r="5" fill="#f5d28a"/>
-    <circle cx="72" cy="24" r="5" fill="#f5d28a"/>
-    <circle cx="21" cy="42" r="4" fill="#f5d28a"/>
-    <circle cx="34" cy="39" r="4" fill="#f5d28a"/>
-    <circle cx="66" cy="39" r="4" fill="#f5d28a"/>
-    <circle cx="79" cy="42" r="4" fill="#f5d28a"/>
-
-    <path d="M34 73 H66" stroke="#b8862b" stroke-width="5" stroke-linecap="round"/>
-  </svg>
-</div>
+    <div class="logo-mark">🎭</div>
     극단 동화나라
   </div>
 
@@ -230,6 +325,19 @@
     <a href="show.html">공연 안내</a>
     <a href="archive.html">자료실</a>
   </nav>
+
+  <button class="staff-login-btn" onclick="toggleLogin()">직원 로그인</button>
+
+  <div id="loginPanel" class="login-panel">
+    <h3>STAFF LOGIN</h3>
+    <p>극단 관계자 전용 접근 코드 입력</p>
+
+    <input id="staffCode" type="password" placeholder="직원 코드 입력">
+
+    <button class="login-submit" onclick="staffLogin()">로그인</button>
+
+    <div id="loginMsg" class="login-msg">직원 코드가 올바르지 않습니다.</div>
+  </div>
 </header>
 
 <main>
@@ -238,7 +346,7 @@
     <div class="welcome">극단 동화나라 홈페이지에 오신걸 환영합니다</div>
 
     <div class="main-image">
-      <img src="donghwa.png">
+      <img src="donghwa.png" alt="극단 동화나라 무대 이미지">
     </div>
 
     <div class="intro">
@@ -252,11 +360,11 @@
 
     <div class="quick-grid">
 
-      <a href="theater.html" class="quick-card">
+      <div class="quick-card" onclick="openHistory()">
         <div class="quick-num">01</div>
         <h3>극단 소개</h3>
         <p>극단의 역사와 철학을 확인할 수 있습니다.</p>
-      </a>
+      </div>
 
       <a href="show.html" class="quick-card">
         <div class="quick-num">02</div>
@@ -280,6 +388,38 @@
   </section>
 
 </main>
+
+<div id="historyModal" class="modal" onclick="closeHistory()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="close-btn" onclick="closeHistory()">×</button>
+    <img src="history.png" alt="극단 동화나라 연혁">
+  </div>
+</div>
+
+<script>
+  function openHistory() {
+    document.getElementById("historyModal").classList.add("active");
+  }
+
+  function closeHistory() {
+    document.getElementById("historyModal").classList.remove("active");
+  }
+
+  function toggleLogin() {
+    document.getElementById("loginPanel").classList.toggle("active");
+  }
+
+  function staffLogin() {
+    const code = document.getElementById("staffCode").value;
+    const msg = document.getElementById("loginMsg");
+
+    if (code === "ADMIN") {
+      window.location.href = "admin.html";
+    } else {
+      msg.style.display = "block";
+    }
+  }
+</script>
 
 </body>
 </html>
