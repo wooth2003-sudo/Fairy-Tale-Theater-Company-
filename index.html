@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>극단 동화나라</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+      background: #fff8dc;
+      color: #111;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* 상단 메뉴 */
+    .topbar {
+      height: 82px;
+      padding: 0 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 248, 220, 0.95);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .logo-mark {
+      width: 54px;
+      height: 54px;
+      border: 4px solid #111;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    .nav {
+      display: flex;
+      gap: 42px;
+      font-weight: 700;
+      color: #1b2945;
+    }
+
+    .nav a:hover {
+      color: #9b3f14;
+    }
+
+    .login-area {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn {
+      padding: 11px 20px;
+      border-radius: 24px;
+      font-weight: 700;
+      border: 1px solid #777;
+      background: #fff8dc;
+    }
+
+    .btn.dark {
+      background: #0f1d44;
+      color: white;
+      border: none;
+    }
+
+    /* 메인 */
+    .hero {
+      padding: 120px 24px 80px;
+      text-align: center;
+    }
+
+    .welcome {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 36px;
+    }
+
+    .hero-image {
+      width: 78%;
+      max-width: 1080px;
+      height: 420px;
+      margin: 0 auto;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 24px 55px rgba(0,0,0,0.16);
+      background: linear-gradient(135deg, #3b1f1f, #8b5a2b, #1f1f1f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero-image::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at center, rgba(255,255,255,0.22), transparent 45%),
+        linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.4));
+    }
+
+    .hero-image-text {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .hero-image-text h2 {
+      font-size: 52px;
+      margin: 0 0 14px;
+      letter-spacing: 4px;
+    }
+
+    .hero-image-text p {
+      font-size: 18px;
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    .main-copy {
+      margin-top: 42px;
+      font-size: 46px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: #0f1d44;
+    }
+
+    .main-copy span {
+      color: #c2410c;
+    }
+
+    /* 바로가기 */
+    .quick-section {
+      padding: 80px 60px 120px;
+    }
+
+    .quick-head {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .quick-head h2 {
+      font-size: 38px;
+      margin: 0 0 16px;
+    }
+
+    .quick-head p {
+      font-size: 17px;
+      color: #555;
+      margin: 0;
+    }
+
+    .quick-grid {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .quick-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 16px;
+      padding: 34px 30px;
+      min-height: 250px;
+      transition: 0.25s;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.03);
+    }
+
+    .quick-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+      border-color: #c2410c;
+    }
+
+    .quick-num {
+      font-size: 22px;
+      font-weight: 900;
+      color: #9b4a16;
+      margin-bottom: 28px;
+    }
+
+    .quick-card h3 {
+      font-size: 25px;
+      margin: 0 0 18px;
+    }
+
+    .quick-card p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #444;
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      .topbar {
+        padding: 0 20px;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero-image {
+        width: 92%;
+        height: 300px;
+      }
+
+      .main-copy {
+        font-size: 32px;
+      }
+
+      .quick-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .quick-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .login-area {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">🎭</div>
+      <div>극단 동화나라</div>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html">메인</a>
+      <a href="#quick">바로가기</a>
+      <a href="show.html">공연 안내</a>
+      <a href="archive.html">자료실</a>
+    </nav>
+
+    <div class="login-area">
+      <a href="#" class="btn">회원가입</a>
+      <a href="#" class="btn dark">로그인</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="welcome">극단 동화나라 홈페이지에 오신걸 환영합니다</div>
+
+    <div class="hero-image">
+      <div class="hero-image-text">
+        <h2>DONGHWA NARA</h2>
+        <p>환상과 현실이 만나는 무대, 극단 동화나라</p>
+      </div>
+    </div>
+
+    <div class="main-copy">
+      <span>WE MAKE</span> EVERY STAGE A STORY
+    </div>
+  </section>
+
+  <section id="quick" class="quick-section">
+    <div class="quick-head">
+      <h2>극단 바로가기</h2>
+      <p>극단 동화나라의 주요 정보를 한눈에 확인해보세요.</p>
+    </div>
+
+    <div class="quick-grid">
+
+      <a href="theater.html" class="quick-card">
+        <div class="quick-num">01</div>
+        <h3>극단 소개</h3>
+        <p>극단 동화나라의 역사, 철학, 대표작과 무대가 걸어온 길을 확인할 수 있습니다.</p>
+      </a>
+
+      <a href="show.html" class="quick-card">
+        <div class="quick-num">02</div>
+        <h3>공연 안내</h3>
+        <p>현재 진행 중인 공연과 예정된 공연 일정, 출연진 정보를 확인할 수 있습니다.</p>
+      </a>
+
+      <a href="staff.html" class="quick-card">
+        <div class="quick-num">03</div>
+        <h3>배우 / 스태프 소개</h3>
+        <p>무대 위 배우들과 공연을 완성하는 스태프들의 공식 프로필을 볼 수 있습니다.</p>
+      </a>
+
+      <a href="archive.html" class="quick-card">
+        <div class="quick-num">04</div>
+        <h3>자료실</h3>
+        <p>공연 포스터, 캐스팅표, 공지문, 관련 자료를 쉽고 빠르게 확인할 수 있습니다.</p>
+      </a>
+
+    </div>
+  </section>
+
+</body>
+</html>
