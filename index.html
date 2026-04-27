@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>자료실 | 극단 동화나라</title>
+  <title>극단 동화나라</title>
 
   <style>
     * { box-sizing: border-box; }
@@ -19,33 +19,34 @@
       color: inherit;
     }
 
+    /* 상단바 */
     .topbar {
       height: 82px;
       padding: 0 48px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(35, 5, 14, 0.95);
-      border-bottom: 1px solid rgba(255,255,255,0.14);
+      background: rgba(20, 0, 5, 0.95);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     .logo {
       display: flex;
       align-items: center;
-      gap: 14px;
-      font-size: 26px;
+      gap: 12px;
+      font-size: 24px;
       font-weight: 900;
     }
 
     .logo-mark {
-      width: 50px;
-      height: 50px;
-      border: 3px solid #f5d28a;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
+      background: #fff7e6;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #fff7e6;
+      border: 2px solid #f5d28a;
     }
 
     .nav {
@@ -58,100 +59,98 @@
       color: #f5d28a;
     }
 
-    .page {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 70px 24px 100px;
-    }
-
-    .page-title {
+    /* 메인 */
+    .hero {
       text-align: center;
-      margin-bottom: 42px;
+      padding: 80px 20px 40px;
     }
 
-    .page-title h1 {
-      font-size: 42px;
-      margin: 0 0 12px;
-      color: #f5d28a;
+    .hero h1 {
+      font-size: 32px;
+      margin-bottom: 30px;
     }
 
-    .page-title p {
-      margin: 0;
-      color: #f7e6c6;
-    }
-
-    .hero-banner {
-      height: 330px;
-      border-radius: 18px;
-      margin-bottom: 42px;
-      overflow: hidden;
-      border: 1px solid rgba(245,210,138,0.35);
-      box-shadow: 0 24px 55px rgba(0,0,0,0.35);
-    }
-
-    .hero-banner img {
+    .main-image {
       width: 100%;
-      height: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+    }
+
+    .main-image img {
+      width: 100%;
+      height: 70vh;
       object-fit: cover;
       display: block;
     }
 
-    .board {
+    .intro {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .intro h2 {
+      font-size: 36px;
+      color: #f5d28a;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      font-size: 18px;
+      color: #f7e6c6;
+    }
+
+    /* 바로가기 */
+    .quick {
+      max-width: 1100px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+
+    .quick h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #f5d28a;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .quick-card {
       background: #fff7e6;
       color: #1b1114;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.32);
-      border: 1px solid rgba(245,210,138,0.5);
+      padding: 25px;
+      border-radius: 16px;
+      transition: 0.3s;
+      display: block;
     }
 
-    .board-head {
-      display: grid;
-      grid-template-columns: 110px 1fr 150px 150px 110px;
-      padding: 18px 24px;
-      background: #4b0f1f;
-      color: #f5d28a;
+    .quick-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .quick-num {
+      font-size: 14px;
       font-weight: 900;
-      text-align: center;
-    }
-
-    .board-row {
-      display: grid;
-      grid-template-columns: 110px 1fr 150px 150px 110px;
-      padding: 20px 24px;
-      border-bottom: 1px solid #eadcc2;
-      align-items: center;
-      text-align: center;
-    }
-
-    .board-row:hover {
-      background: #f3e6cf;
-    }
-
-    .title-cell {
-      text-align: left;
-      font-weight: 800;
-    }
-
-    .title-cell a:hover {
+      margin-bottom: 10px;
       color: #8a1538;
-      text-decoration: underline;
     }
 
-    .badge {
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 900;
-      color: #fff7e6;
+    .quick-card h3 {
+      margin: 0 0 10px;
     }
 
-    .notice { background: #b00020; }
-    .poster { background: #6b1230; }
-    .cast { background: #7d5a1d; }
-    .file { background: #2f2730; }
+    .quick-card p {
+      font-size: 14px;
+      color: #555;
+    }
 
-    .important { color: #b00020; }
   </style>
 </head>
 
@@ -165,75 +164,59 @@
 
   <nav class="nav">
     <a href="index.html">메인</a>
-    <a href="index.html#quick">바로가기</a>
+    <a href="#quick">바로가기</a>
     <a href="show.html">공연 안내</a>
     <a href="archive.html">자료실</a>
   </nav>
 </header>
 
-<main class="page">
+<main>
 
-  <section class="page-title">
-    <h1>자료실</h1>
-    <p>극단 동화나라의 주요 자료를 확인하실 수 있습니다.</p>
+  <!-- 메인 -->
+  <section class="hero">
+    <h1>극단 동화나라 홈페이지에 오신걸 환영합니다</h1>
+
+    <div class="main-image">
+      <img src="dongwha.png">
+    </div>
+
+    <div class="intro">
+      <h2>DONGHWA NARA</h2>
+      <p>환상과 현실이 만나는 무대, 극단 동화나라</p>
+    </div>
   </section>
 
-  <section class="hero-banner">
-    <img src="dan123.png">
-  </section>
+  <!-- 바로가기 -->
+  <section id="quick" class="quick">
 
-  <section class="board">
+    <h2>바로가기</h2>
 
-    <div class="board-head">
-      <div>번호</div>
-      <div>제목</div>
-      <div>작성자</div>
-      <div>작성일</div>
-      <div>조회수</div>
-    </div>
+    <div class="quick-grid">
 
-    <!-- 공지 -->
-    <div class="board-row">
-      <div><span class="badge notice">공지</span></div>
-      <div class="title-cell important">
-        <a href="notice-accident.html">2026년 9월 25일 공연 중 사고에 대한 안내문</a>
-      </div>
-      <div>운영팀</div>
-      <div>2026-09-25</div>
-      <div>2847</div>
-    </div>
+      <a href="theater.html" class="quick-card">
+        <div class="quick-num">01</div>
+        <h3>극단 소개</h3>
+        <p>극단 동화나라의 역사와 철학을 확인할 수 있습니다.</p>
+      </a>
 
-    <!-- 포스터 -->
-    <div class="board-row">
-      <div><span class="badge poster">포스터</span></div>
-      <div class="title-cell">
-        <a href="sss.html" target="_blank">[특별공연] 로미오와 줄리엣 공식 포스터</a>
-      </div>
-      <div>홍보팀</div>
-      <div>2026-09-12</div>
-      <div>921</div>
-    </div>
+      <a href="show.html" class="quick-card">
+        <div class="quick-num">02</div>
+        <h3>공연 안내</h3>
+        <p>현재 진행 중인 공연과 일정을 확인할 수 있습니다.</p>
+      </a>
 
-    <!-- 캐스팅표 -->
-    <div class="board-row">
-      <div><span class="badge cast">캐스팅</span></div>
-      <div class="title-cell">
-        <a href="cas.html" target="_blank">로미오와 줄리엣 캐스팅표 안내</a>
-      </div>
-      <div>공연기획팀</div>
-      <div>2026-09-10</div>
-      <div>1184</div>
-    </div>
+      <a href="actor.html" class="quick-card">
+        <div class="quick-num">03</div>
+        <h3>배우 / 스태프 소개</h3>
+        <p>극단의 배우와 스태프를 소개합니다.</p>
+      </a>
 
-    <!-- 안내 -->
-    <div class="board-row">
-      <div><span class="badge file">자료</span></div>
-      <div class="title-cell">
-        <a href="#">공연 관람 및 티켓 수령 안내</a>
-      </div>
-      <div>운영팀</div>
-      <div>2026-09-08</div>
-      <div>654</div>
+      <a href="archive.html" class="quick-card">
+        <div class="quick-num">04</div>
+        <h3>자료실</h3>
+        <p>공지사항, 포스터, 캐스팅 정보를 확인할 수 있습니다.</p>
+      </a>
+
     </div>
 
   </section>
