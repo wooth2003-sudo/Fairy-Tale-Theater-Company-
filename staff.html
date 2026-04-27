@@ -2,10 +2,12 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>배우 / 스태프 소개 | 극단 동화나라</title>
+  <title>배우 / 스태프 소개</title>
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -14,8 +16,12 @@
       color: #fff7e6;
     }
 
-    a { text-decoration: none; color: inherit; }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
+    /* 상단바 */
     .topbar {
       height: 82px;
       padding: 0 48px;
@@ -24,148 +30,149 @@
       justify-content: space-between;
       background: rgba(35, 5, 14, 0.95);
       border-bottom: 1px solid rgba(255,255,255,0.14);
-      position: sticky;
-      top: 0;
-      z-index: 10;
     }
 
     .logo {
       display: flex;
       align-items: center;
       gap: 14px;
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 900;
-      color: #fff7e6;
     }
 
     .logo-mark {
-      width: 54px;
-      height: 54px;
+      width: 50px;
+      height: 50px;
       border: 3px solid #f5d28a;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 27px;
       background: #fff7e6;
     }
 
     .nav {
       display: flex;
-      gap: 42px;
+      gap: 40px;
       font-weight: 800;
     }
 
-    .nav a:hover { color: #f5d28a; }
+    .nav a:hover {
+      color: #f5d28a;
+    }
 
-    .page-title {
+    /* 제목 */
+    .title {
       text-align: center;
-      padding: 75px 20px 45px;
+      padding: 70px 20px 30px;
     }
 
-    .page-title h1 {
-      font-size: 42px;
-      margin: 0 0 14px;
-      color: #f5d28a;
-    }
-
-    .page-title p {
+    .title h1 {
+      font-size: 40px;
       margin: 0;
-      color: #f7e6c6;
-      font-size: 17px;
-    }
-
-    .section-title {
-      max-width: 1120px;
-      margin: 35px auto 22px;
-      padding: 0 24px;
-      font-size: 28px;
       color: #f5d28a;
     }
 
-    .people-grid {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 24px 50px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 26px;
+    .title p {
+      margin-top: 10px;
+      color: #f7e6c6;
     }
 
-    .person-card {
+    /* 전체 영역 */
+    .staff-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    /* 한 줄 카드 */
+    .staff-row {
+      display: flex;
+      gap: 30px;
       background: #fff7e6;
       color: #1b1114;
-      border-radius: 18px;
-      padding: 28px;
-      display: grid;
-      grid-template-columns: 130px 1fr;
-      gap: 24px;
-      box-shadow: 0 18px 42px rgba(0,0,0,0.28);
-      border: 1px solid rgba(245,210,138,0.55);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+      transition: 0.25s;
     }
 
-    .portrait {
-      width: 130px;
-      height: 160px;
-      border-radius: 14px;
-      background:
-        radial-gradient(circle at top, rgba(245,210,138,0.35), transparent 45%),
-        linear-gradient(160deg, #2a0711, #7b1730);
+    .staff-row:hover {
+      transform: translateY(-5px);
+    }
+
+    /* 왼쪽 큰 이미지 */
+    .staff-img {
+      width: 220px;
+      height: 260px;
+      flex-shrink: 0;
+      border-radius: 16px;
+      background: linear-gradient(160deg, #2a0711, #7b1730);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 54px;
+      font-size: 70px;
     }
 
-    .person-card h2 {
+    /* 이미지 넣을 경우 */
+    .staff-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    /* 오른쪽 */
+    .staff-info h2 {
       margin: 0;
-      font-size: 27px;
+      font-size: 32px;
       color: #4b0f1f;
     }
 
     .role {
-      margin-top: 8px;
-      font-size: 15px;
+      margin-top: 6px;
       font-weight: 900;
       color: #8a1538;
     }
 
-    .desc {
-      margin: 16px 0 0;
-      font-size: 15px;
+    .staff-info p {
+      margin-top: 16px;
       line-height: 1.8;
+      font-size: 16px;
       color: #3d3030;
     }
 
+    /* 태그 */
     .tag-box {
-      margin-top: 14px;
+      margin-top: 15px;
       display: flex;
-      flex-wrap: wrap;
       gap: 8px;
+      flex-wrap: wrap;
     }
 
-    .tag {
-      padding: 6px 11px;
-      border-radius: 999px;
+    .tag-box span {
       background: #4b0f1f;
-      color: #fff7e6;
-      font-size: 12px;
-      font-weight: 800;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
     }
 
-    @media (max-width: 850px) {
-      .topbar { padding: 0 20px; }
+    /* 반응형 */
+    @media (max-width: 768px) {
       .nav { display: none; }
-      .people-grid { grid-template-columns: 1fr; }
-    }
 
-    @media (max-width: 560px) {
-      .person-card {
-        grid-template-columns: 1fr;
+      .staff-row {
+        flex-direction: column;
       }
 
-      .portrait {
+      .staff-img {
         width: 100%;
+        height: 220px;
       }
     }
   </style>
@@ -173,104 +180,100 @@
 
 <body>
 
+  <!-- 상단 -->
   <header class="topbar">
-    <a href="index.html" class="logo">
+    <div class="logo">
       <div class="logo-mark">🎭</div>
-      <div>극단 동화나라</div>
-    </a>
+      극단 동화나라
+    </div>
 
     <nav class="nav">
       <a href="index.html">메인</a>
-      <a href="index.html#quick">바로가기</a>
       <a href="show.html">공연 안내</a>
       <a href="archive.html">자료실</a>
     </nav>
   </header>
 
-  <section class="page-title">
+  <!-- 제목 -->
+  <section class="title">
     <h1>배우 / 스태프 소개</h1>
-    <p>극단 동화나라의 무대를 함께 만들어가는 배우와 스태프를 소개합니다.</p>
+    <p>극단 동화나라의 무대를 함께 만들어가는 사람들</p>
   </section>
 
-  <h2 class="section-title">배우 소개</h2>
+  <!-- 리스트 -->
+  <main class="staff-wrap">
 
-  <main class="people-grid">
-
-    <section class="person-card">
-      <div class="portrait">👑</div>
-      <div>
+    <!-- 여배우 -->
+    <div class="staff-row">
+      <div class="staff-img">👑</div>
+      <div class="staff-info">
         <h2>여배우</h2>
-        <div class="role">주연배우 · 극단 동화나라 대표 배우</div>
-        <p class="desc">
+        <div class="role">주연배우 · 극단 대표</div>
+        <p>
           깊은 감정 표현과 강한 무대 장악력으로 관객의 사랑을 받아온 극단 동화나라의 대표 배우입니다.
-          고전극부터 창작극까지 폭넓은 작품에서 중심 역할을 맡아왔습니다.
+          다양한 작품에서 중심 역할을 맡으며 무대를 이끌고 있습니다.
         </p>
         <div class="tag-box">
-          <span class="tag">주연</span>
-          <span class="tag">로미오와 줄리엣</span>
-          <span class="tag">대표 배우</span>
+          <span>주연</span>
+          <span>대표 배우</span>
+          <span>로미오와 줄리엣</span>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section class="person-card">
-      <div class="portrait">🎭</div>
-      <div>
+    <!-- 배조연 -->
+    <div class="staff-row">
+      <div class="staff-img">🎭</div>
+      <div class="staff-info">
         <h2>배조연</h2>
-        <div class="role">배우 · 액션 대역 / 조연</div>
-        <p class="desc">
-          섬세한 동작과 안정적인 무대 호흡을 바탕으로 다양한 배역을 소화해온 배우입니다.
-          작품 속 장면의 완성도를 높이는 조연 및 대역 연기로 무대에 힘을 더하고 있습니다.
+        <div class="role">배우 · 조연 / 액션 대역</div>
+        <p>
+          섬세한 동작과 안정적인 무대 호흡을 바탕으로 다양한 배역을 소화하는 배우입니다.
+          작품의 완성도를 높이는 조연 역할로 무대를 지탱합니다.
         </p>
         <div class="tag-box">
-          <span class="tag">조연</span>
-          <span class="tag">액션 대역</span>
-          <span class="tag">무대 호흡</span>
+          <span>조연</span>
+          <span>액션 대역</span>
+          <span>무대 호흡</span>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section class="person-card">
-      <div class="portrait">🎩</div>
-      <div>
+    <!-- 남배우 -->
+    <div class="staff-row">
+      <div class="staff-img">🎩</div>
+      <div class="staff-info">
         <h2>남배우</h2>
         <div class="role">배우 · 조연</div>
-        <p class="desc">
-          여러 작품에서 감초 역할과 앙상블을 맡아온 배우입니다.
-          안정적인 발성과 자연스러운 연기로 작품의 분위기를 부드럽게 이어주는 역할을 하고 있습니다.
+        <p>
+          다양한 작품에서 감초 역할과 앙상블을 맡아온 배우입니다.
+          자연스러운 연기로 작품의 흐름을 안정적으로 이어갑니다.
         </p>
         <div class="tag-box">
-          <span class="tag">조연</span>
-          <span class="tag">앙상블</span>
-          <span class="tag">감초 역할</span>
+          <span>조연</span>
+          <span>앙상블</span>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- 민연출 -->
+    <div class="staff-row">
+      <div class="staff-img">🎬</div>
+      <div class="staff-info">
+        <h2>민연출</h2>
+        <div class="role">총괄 연출</div>
+        <p>
+          무대 구성과 연출을 총괄하며 작품의 완성도를 끌어올리는 연출가입니다.
+          세밀한 디테일과 연출 감각으로 극단의 무대를 이끌고 있습니다.
+        </p>
+        <div class="tag-box">
+          <span>연출</span>
+          <span>무대 구성</span>
+        </div>
+      </div>
+    </div>
 
   </main>
-
-  <h2 class="section-title">스태프 소개</h2>
-
-  <section class="people-grid">
-
-    <section class="person-card">
-      <div class="portrait">🎬</div>
-      <div>
-        <h2>민연출</h2>
-        <div class="role">총괄 연출 · 로미오와 줄리엣</div>
-        <p class="desc">
-          무대 구성, 배우 동선, 소품 디테일까지 세밀하게 조율하는 연출가입니다.
-          고전 작품을 현대적인 감각으로 재해석하며 극단 동화나라의 무대 완성도를 이끌고 있습니다.
-        </p>
-        <div class="tag-box">
-          <span class="tag">총괄 연출</span>
-          <span class="tag">무대 구성</span>
-          <span class="tag">고전 재해석</span>
-        </div>
-      </div>
-    </section>
-
-  </section>
 
 </body>
 </html>
