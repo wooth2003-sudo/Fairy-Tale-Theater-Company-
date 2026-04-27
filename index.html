@@ -5,223 +5,234 @@
   <title>극단 동화나라</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
-      background: linear-gradient(180deg, #1a0308, #4b0f1f);
-      color: #fff7e6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* 상단바 */
-    .topbar {
-      height: 82px;
-      padding: 0 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(20, 0, 5, 0.95);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+@@ -32,7 +30,6 @@
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
     }
 
     .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 24px;
-      font-weight: 900;
-    }
-
-    .logo-mark {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background: #fff7e6;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid #f5d28a;
-    }
-
-    .nav {
-      display: flex;
-      gap: 40px;
-      font-weight: 800;
+@@ -63,9 +60,7 @@
+      color: #fff7e6;
     }
 
     .nav a:hover {
       color: #f5d28a;
     }
+    .nav a:hover { color: #f5d28a; }
 
-    /* 메인 */
-    .hero {
-      text-align: center;
-      padding: 80px 20px 40px;
+    .login-area {
+      display: flex;
+@@ -93,20 +88,18 @@
+      background:
+        radial-gradient(circle at top, rgba(255, 220, 150, 0.13), transparent 34%),
+        linear-gradient(180deg, #5a1024 0%, #3a0816 100%);
+      min-height: calc(100vh - 82px);
     }
 
-    .hero h1 {
-      font-size: 32px;
-      margin-bottom: 30px;
+    .welcome {
+      font-size: 30px;
+      font-weight: 900;
+      margin-bottom: 36px;
+      color: #fff7e6;
     }
 
-    .main-image {
-      width: 100%;
-      max-width: 1100px;
+    .hero-image {
+      width: 78%;
+      max-width: 1080px;
+      height: 420px;
+      width: 90%;
+      max-width: 1200px;
+      height: 55vh;
       margin: 0 auto;
-      border-radius: 20px;
+      border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
-    }
-
-    .main-image img {
-      width: 100%;
-      height: 70vh;
-      object-fit: cover;
-      display: block;
-    }
-
-    .intro {
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    .intro h2 {
-      font-size: 36px;
-      color: #f5d28a;
-      margin-bottom: 10px;
-    }
-
-    .intro p {
-      font-size: 18px;
-      color: #f7e6c6;
-    }
-
-    /* 바로가기 */
-    .quick {
-      max-width: 1100px;
-      margin: 80px auto;
-      padding: 0 20px;
-    }
-
-    .quick h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      color: #f5d28a;
-    }
-
-    .quick-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .quick-card {
-      background: #fff7e6;
-      color: #1b1114;
-      padding: 25px;
-      border-radius: 16px;
-      transition: 0.3s;
+@@ -176,6 +169,8 @@
+      min-height: 250px;
+      transition: 0.25s;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+      cursor: pointer;
       display: block;
     }
 
     .quick-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+@@ -203,85 +198,63 @@
+      margin: 0;
     }
 
-    .quick-num {
-      font-size: 14px;
+    @media (max-width: 900px) {
+      .topbar {
+        padding: 0 20px;
+      }
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.82);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+
+      .nav {
+        display: none;
+      }
+    .modal.active {
+      display: flex;
+    }
+
+      .hero-image {
+        width: 92%;
+        height: 300px;
+      }
+    .modal-content {
+      position: relative;
+      max-width: 92vw;
+      max-height: 90vh;
+    }
+
+      .hero-title {
+        font-size: 31px;
+      }
+    .modal-content img {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 16px;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.6);
+      display: block;
+    }
+
+      .hero-subtitle {
+        font-size: 18px;
+      }
+    .close-btn {
+      position: absolute;
+      top: -18px;
+      right: -18px;
+      width: 42px;
+      height: 42px;
+      border: none;
+      border-radius: 50%;
+      background: #f5d28a;
+      color: #3a0816;
+      font-size: 26px;
       font-weight: 900;
-      margin-bottom: 10px;
-      color: #8a1538;
+      cursor: pointer;
     }
 
-    .quick-card h3 {
-      margin: 0 0 10px;
+      .quick-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    @media (max-width: 900px) {
+      .topbar { padding: 0 20px; }
+      .nav { display: none; }
+      .hero-image { width: 92%; height: 300px; }
+      .quick-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
-    .quick-card p {
-      font-size: 14px;
-      color: #555;
-    }
+    @media (max-width: 560px) {
+      .logo {
+        font-size: 21px;
+      }
 
+      .login-area {
+        display: none;
+      }
+
+      .welcome {
+        font-size: 24px;
+      }
+
+      .quick-grid {
+        grid-template-columns: 1fr;
+      }
+      .logo { font-size: 21px; }
+      .login-area { display: none; }
+      .welcome { font-size: 24px; }
+      .quick-grid { grid-template-columns: 1fr; }
+    }
+    .hero-image {
+  width: 90%;
+  max-width: 1200px;
+
+  height: 55vh; /* ⭐ 핵심: 화면의 70% */
+  
+  margin: 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 28px 60px rgba(0,0,0,0.42);
+  border: 1px solid rgba(245,210,138,0.28);
+  background: #111;
+}
+    .hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ⭐ 이거 꼭 유지 */
+}
+    .hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+}
+    .history {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.history img {
+  width: 90%;
+  max-width: 1100px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
   </style>
 </head>
 
-<body>
-
-<header class="topbar">
-  <div class="logo">
-    <div class="logo-mark">🎭</div>
-    극단 동화나라
-  </div>
-
-  <nav class="nav">
-    <a href="index.html">메인</a>
-    <a href="#quick">바로가기</a>
-    <a href="show.html">공연 안내</a>
-    <a href="archive.html">자료실</a>
-  </nav>
-</header>
-
-<main>
-
-  <!-- 메인 -->
-  <section class="hero">
-    <h1>극단 동화나라 홈페이지에 오신걸 환영합니다</h1>
-
-    <div class="main-image">
-      <img src="dongwha.png">
-    </div>
-
-    <div class="intro">
-      <h2>DONGHWA NARA</h2>
-      <p>환상과 현실이 만나는 무대, 극단 동화나라</p>
-    </div>
-  </section>
-
-  <!-- 바로가기 -->
-  <section id="quick" class="quick">
-
-    <h2>바로가기</h2>
+@@ -325,12 +298,11 @@
 
     <div class="quick-grid">
 
       <a href="theater.html" class="quick-card">
+      <div class="quick-card" onclick="openHistory()">
         <div class="quick-num">01</div>
+        <img src="history.png" alt="극단 연표">
         <h3>극단 소개</h3>
-        <p>극단 동화나라의 역사와 철학을 확인할 수 있습니다.</p>
+        <p>극단 동화나라의 역사, 철학, 대표작과 무대가 걸어온 길을 확인할 수 있습니다.</p>
       </a>
+      </div>
 
       <a href="show.html" class="quick-card">
         <div class="quick-num">02</div>
-        <h3>공연 안내</h3>
-        <p>현재 진행 중인 공연과 일정을 확인할 수 있습니다.</p>
-      </a>
-
-      <a href="actor.html" class="quick-card">
-        <div class="quick-num">03</div>
-        <h3>배우 / 스태프 소개</h3>
-        <p>극단의 배우와 스태프를 소개합니다.</p>
-      </a>
-
-      <a href="archive.html" class="quick-card">
-        <div class="quick-num">04</div>
-        <h3>자료실</h3>
-        <p>공지사항, 포스터, 캐스팅 정보를 확인할 수 있습니다.</p>
-      </a>
-
+@@ -353,5 +325,23 @@
     </div>
-
   </section>
 
-</main>
+  <div id="historyModal" class="modal" onclick="closeHistory()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="close-btn" onclick="closeHistory()">×</button>
+      <img src="history.png" alt="극단 동화나라 연혁">
+    </div>
+  </div>
+
+  <script>
+    function openHistory() {
+      document.getElementById("historyModal").classList.add("active");
+    }
+
+    function closeHistory() {
+      document.getElementById("historyModal").classList.remove("active");
+    }
+  </script>
 
 </body>
 </html>
