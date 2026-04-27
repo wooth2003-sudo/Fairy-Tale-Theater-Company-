@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>좌석 배치도 안내</title>
+
+<style>
+body{
+  margin:0;
+  font-family:"Pretendard","Noto Sans KR",sans-serif;
+  background: linear-gradient(135deg,#3a0008,#6d0015);
+  color:#f5e6c4;
+}
+
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding:60px 20px;
+}
+
+.title{
+  text-align:center;
+  font-size:34px;
+  font-weight:800;
+  color:#e7c27a;
+  margin-bottom:40px;
+}
+
+/* 이미지 */
+.seat-img{
+  width:100%;
+  border-radius:16px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.6);
+  margin-bottom:40px;
+}
+
+/* 안내 박스 */
+.notice-box{
+  background:rgba(0,0,0,0.4);
+  border-radius:16px;
+  padding:30px;
+  line-height:1.8;
+}
+
+.notice-box h3{
+  color:#e7c27a;
+  margin-bottom:15px;
+}
+
+.notice-box p{
+  margin:8px 0;
+  color:#ddd;
+}
+
+/* 강조 */
+.warn{
+  color:#ff5c5c;
+  font-weight:700;
+  margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <div class="title">좌석 배치도 안내</div>
+
+  <!-- 좌석 이미지 -->
+  <img src="hall.png" class="seat-img">
+
+  <!-- 안내문 -->
+  <div class="notice-box">
+
+    <h3>좌석 이용 안내</h3>
+
+    <p>• 공연장 좌석은 예매 시 선택한 좌석으로만 착석이 가능합니다.</p>
+    <p>• 공연 시작 후에는 지정된 시간에만 입장이 가능합니다.</p>
+    <p>• 좌석 이동은 공연 중 불가하며, 안내에 따라 이동해야 합니다.</p>
+
+    <h3>좌석 번호 안내</h3>
+
+    <p>• 좌석 번호는 중앙을 기준으로 좌우 대칭 구조로 구성되어 있습니다.</p>
+    <p>• 예매 시 좌석 번호를 반드시 확인해주시기 바랍니다.</p>
+
+    <h3>입장 및 이동 안내</h3>
+
+    <p>• 1층 좌석은 좌측/우측 입구를 이용하여 입장 가능합니다.</p>
+    <p>• 2층 좌석은 별도 계단을 통해 입장합니다.</p>
+    <p>• 공연 중 이동 시 다른 관객에게 방해가 되지 않도록 주의 바랍니다.</p>
+
+    <p class="warn">※ 좌석은 예매 상황 및 공연 연출에 따라 변경될 수 있습니다.</p>
+
+  </div>
+
+</div>
+
+</body>
+</html>
