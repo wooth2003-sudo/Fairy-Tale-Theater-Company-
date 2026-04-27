@@ -11,7 +11,7 @@
       margin: 0;
       font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
       background: linear-gradient(180deg, #1a0308, #4b0f1f);
-      color: #fff7e6;
+      color: #f8e7c2;
     }
 
     a {
@@ -19,6 +19,7 @@
       color: inherit;
     }
 
+    /* 상단바 */
     .topbar {
       height: 82px;
       padding: 0 48px;
@@ -49,7 +50,7 @@
       border: 2px solid #f5d28a;
     }
 
-    /* 메뉴 중앙 고정 */
+    /* 메뉴 중앙 */
     .nav {
       position: absolute;
       left: 50%;
@@ -57,13 +58,17 @@
       display: flex;
       gap: 48px;
       font-weight: 900;
-      white-space: nowrap;
+    }
+
+    .nav a {
+      color: #e8d6a8;
     }
 
     .nav a:hover {
       color: #f5d28a;
     }
 
+    /* 메인 영역 */
     .hero {
       text-align: center;
       padding: 80px 20px 40px;
@@ -73,7 +78,7 @@
       font-size: 30px;
       font-weight: 900;
       margin-bottom: 36px;
-      color: #fff7e6;
+      color: #f5d28a;
     }
 
     .main-image {
@@ -92,129 +97,81 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
 
     .intro {
-      margin-top: 40px;
+      margin-top: 50px;
     }
 
     .intro h1 {
-      font-size: 42px;
-      margin: 0 0 12px;
+      font-size: 56px; /* 🔥 크게 */
+      margin-bottom: 12px;
       color: #f5d28a;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
     }
 
     .intro p {
       font-size: 18px;
-      color: #f7e6c6;
-      margin: 0;
+      color: #e7d3a5;
     }
 
+    /* 바로가기 */
     .quick {
       max-width: 1100px;
-      margin: 90px auto 120px;
+      margin: 100px auto;
       padding: 0 20px;
     }
 
     .quick h2 {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
       color: #f5d28a;
-      font-size: 30px;
+      font-size: 34px;
     }
 
     .quick-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 25px;
     }
 
     .quick-card {
       background: #fff7e6;
       color: #1b1114;
-      padding: 28px 25px;
-      border-radius: 16px;
-      transition: 0.3s;
+      padding: 40px 30px;
+      border-radius: 18px;
+      transition: 0.35s;
       display: block;
-      min-height: 175px;
+      min-height: 230px;
       cursor: pointer;
     }
 
     .quick-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.35);
     }
 
     .quick-num {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 900;
-      margin-bottom: 16px;
       color: #8a1538;
+      margin-bottom: 18px;
     }
 
     .quick-card h3 {
-      margin: 0 0 14px;
-      font-size: 22px;
+      font-size: 24px;
+      margin-bottom: 16px;
     }
 
     .quick-card p {
-      font-size: 15px;
-      line-height: 1.6;
-      color: #555;
-      margin: 0;
+      font-size: 16px;
+      color: #5a4a3a;
+      line-height: 1.7;
     }
 
-    /* history.png 팝업 */
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.86);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      padding: 30px;
-    }
-
-    .modal.active {
-      display: flex;
-    }
-
-    .modal-box {
-      position: relative;
-      max-width: 92vw;
-      max-height: 90vh;
-    }
-
-    .modal-box img {
-      max-width: 100%;
-      max-height: 90vh;
-      border-radius: 14px;
-      box-shadow: 0 30px 70px rgba(0,0,0,0.6);
-      display: block;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: -18px;
-      right: -18px;
-      width: 42px;
-      height: 42px;
-      border: none;
-      border-radius: 50%;
-      background: #f5d28a;
-      color: #3a0816;
-      font-size: 28px;
-      font-weight: 900;
-      cursor: pointer;
-    }
-
+    /* 반응형 */
     @media (max-width: 900px) {
-      .topbar { padding: 0 20px; }
       .nav { display: none; }
-      .main-image { width: 92%; height: 300px; }
       .quick-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
@@ -226,85 +183,68 @@
 
 <body>
 
-  <header class="topbar">
-    <a href="index.html" class="logo">
-      <div class="logo-mark">🎭</div>
-      <div>극단 동화나라</div>
-    </a>
-
-    <nav class="nav">
-      <a href="index.html">메인</a>
-      <a href="#quick">바로가기</a>
-      <a href="show.html">공연 안내</a>
-      <a href="archive.html">자료실</a>
-    </nav>
-  </header>
-
-  <main>
-
-    <section class="hero">
-      <div class="welcome">극단 동화나라 홈페이지에 오신걸 환영합니다</div>
-
-      <div class="main-image">
-        <img src="donghwa.png" alt="극단 동화나라 무대 이미지">
-      </div>
-
-      <div class="intro">
-        <h1>DONGHWA NARA</h1>
-        <p>환상과 현실이 만나는 무대, 극단 동화나라</p>
-      </div>
-    </section>
-
-    <section id="quick" class="quick">
-      <h2>바로가기</h2>
-
-      <div class="quick-grid">
-
-        <div class="quick-card" onclick="openHistory()">
-          <div class="quick-num">01</div>
-          <h3>극단 소개</h3>
-          <p>극단의 역사와 철학을 확인할 수 있습니다.</p>
-        </div>
-
-        <a href="show.html" class="quick-card">
-          <div class="quick-num">02</div>
-          <h3>공연 안내</h3>
-          <p>현재 진행 중인 공연과 일정을 확인할 수 있습니다.</p>
-        </a>
-
-        <a href="staff.html" class="quick-card">
-          <div class="quick-num">03</div>
-          <h3>배우 / 스태프 소개</h3>
-          <p>극단의 배우와 스태프를 소개합니다.</p>
-        </a>
-
-        <a href="archive.html" class="quick-card">
-          <div class="quick-num">04</div>
-          <h3>자료실</h3>
-          <p>공지사항과 포스터, 캐스팅 정보를 확인할 수 있습니다.</p>
-        </a>
-
-      </div>
-    </section>
-
-  </main>
-
-  <div id="historyModal" class="modal" onclick="closeHistory()">
-    <div class="modal-box" onclick="event.stopPropagation()">
-      <button class="close-btn" onclick="closeHistory()">×</button>
-      <img src="history.png" alt="극단 동화나라 연혁">
-    </div>
+<header class="topbar">
+  <div class="logo">
+    <div class="logo-mark">🎭</div>
+    극단 동화나라
   </div>
 
-  <script>
-    function openHistory() {
-      document.getElementById("historyModal").classList.add("active");
-    }
+  <nav class="nav">
+    <a href="index.html">메인</a>
+    <a href="#quick">바로가기</a>
+    <a href="show.html">공연 안내</a>
+    <a href="archive.html">자료실</a>
+  </nav>
+</header>
 
-    function closeHistory() {
-      document.getElementById("historyModal").classList.remove("active");
-    }
-  </script>
+<main>
+
+  <section class="hero">
+    <div class="welcome">극단 동화나라 홈페이지에 오신걸 환영합니다</div>
+
+    <div class="main-image">
+      <img src="donghwa.png">
+    </div>
+
+    <div class="intro">
+      <h1>DONGHWA NARA</h1>
+      <p>환상과 현실이 만나는 무대, 극단 동화나라</p>
+    </div>
+  </section>
+
+  <section id="quick" class="quick">
+    <h2>바로가기</h2>
+
+    <div class="quick-grid">
+
+      <a href="theater.html" class="quick-card">
+        <div class="quick-num">01</div>
+        <h3>극단 소개</h3>
+        <p>극단의 역사와 철학을 확인할 수 있습니다.</p>
+      </a>
+
+      <a href="show.html" class="quick-card">
+        <div class="quick-num">02</div>
+        <h3>공연 안내</h3>
+        <p>현재 진행 중인 공연과 일정을 확인할 수 있습니다.</p>
+      </a>
+
+      <a href="staff.html" class="quick-card">
+        <div class="quick-num">03</div>
+        <h3>배우 / 스태프 소개</h3>
+        <p>극단의 배우와 스태프를 소개합니다.</p>
+      </a>
+
+      <a href="archive.html" class="quick-card">
+        <div class="quick-num">04</div>
+        <h3>자료실</h3>
+        <p>공지사항과 포스터, 캐스팅 정보를 확인할 수 있습니다.</p>
+      </a>
+
+    </div>
+  </section>
+
+</main>
 
 </body>
 </html>
