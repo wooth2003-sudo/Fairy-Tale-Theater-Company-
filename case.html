@@ -1,1 +1,152 @@
 
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>공연 안내사항</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(120, 0, 20, 0.45), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(0, 60, 100, 0.5), transparent 36%),
+        linear-gradient(135deg, #090f1c, #14283c 45%, #260711);
+      color: #d9e6f2;
+      padding: 60px 20px;
+    }
+
+    .notice-wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .notice-title {
+      text-align: center;
+      font-size: 54px;
+      letter-spacing: 4px;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #d9b58d;
+      margin-bottom: 34px;
+      text-shadow: 0 0 18px rgba(217, 181, 141, 0.28);
+    }
+
+    .notice-box {
+      border: 1px solid rgba(255,255,255,0.18);
+      background:
+        linear-gradient(rgba(6, 18, 34, 0.86), rgba(6, 18, 34, 0.92)),
+        repeating-linear-gradient(
+          135deg,
+          rgba(255,255,255,0.025) 0px,
+          rgba(255,255,255,0.025) 1px,
+          transparent 1px,
+          transparent 7px
+        );
+      padding: 36px 44px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+    }
+
+    .notice-section {
+      padding: 26px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.13);
+    }
+
+    .notice-section:last-child {
+      border-bottom: none;
+    }
+
+    .notice-section h2 {
+      margin: 0 0 18px;
+      font-size: 22px;
+      color: #7bb7e8;
+    }
+
+    .notice-section p {
+      margin: 8px 0;
+      font-size: 17px;
+      line-height: 1.9;
+      font-weight: 600;
+      color: #dce8f4;
+    }
+
+    .danger {
+      color: #ff4a4a !important;
+      font-weight: 900;
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.25);
+    }
+
+    .small-note {
+      color: #b9c9d8 !important;
+      font-size: 15px !important;
+      font-weight: 500 !important;
+    }
+
+    @media (max-width: 700px) {
+      .notice-title {
+        font-size: 40px;
+      }
+
+      .notice-box {
+        padding: 28px 22px;
+      }
+
+      .notice-section p {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="notice-wrap">
+
+    <h1 class="notice-title">NOTICE</h1>
+
+    <section class="notice-box">
+
+      <div class="notice-section">
+        <h2>〈관람 연령 안내〉</h2>
+        <p>- 관람등급 : 15세 이상 관람가</p>
+        <p>- 관람연령은 생년월일을 기준으로 확인하며, 나이 및 학년과 무관합니다.</p>
+        <p>- 티켓 수령 및 객석 입장 시 연령 확인을 위한 증빙 서류를 요청할 수 있으니 반드시 지참하시기 바랍니다.</p>
+        <p>- 관람 연령 미숙지로 인해 공연 당일 관람이 불가하거나 관람을 포기한 경우 예매 취소 및 변경이 불가합니다.</p>
+      </div>
+
+      <div class="notice-section">
+        <h2>〈공연 관람 안내〉</h2>
+        <p>- 공연 시작 후에는 입장이 제한되며, 지정된 시간에만 안내를 통해 입장이 가능합니다.</p>
+        <p>- 공연의 흐름과 당일 객석 상황에 따라 다른 관객의 관람에 방해가 되지 않도록 본인 좌석이 아닌 다른 좌석으로 안내받으실 수 있습니다.</p>
+        <p>- 공연 도중 퇴장 시 재입장이 불가하며, 인터미션 시간에 본인 좌석으로 착석하실 수 있습니다.</p>
+        <p>- 객석 내 음식물 반입은 불가합니다.</p>
+        <p>- 커튼콜을 포함하여 공연 중 사전 협의되지 않은 사진 촬영, 영상 녹화, 음원 녹음은 절대 불가합니다.</p>
+      </div>
+
+      <div class="notice-section">
+        <h2>〈예매 및 티켓 수령 안내〉</h2>
+        <p>- 예매 티켓 수령 및 당일 현장 구매는 공연 시작 1시간 30분 전부터 가능합니다.</p>
+        <p>- 예매 티켓은 공연 당일 현장 수령만 가능하며 사전 배송이 불가합니다.</p>
+        <p>- 관람 당일 티켓 수령 시 예매내역서 또는 예매자 성함의 신분증 확인 후 티켓 수령이 가능합니다.</p>
+        <p>- 취소 마감시간 이후 예매 티켓의 취소, 환불, 변경은 불가합니다.</p>
+      </div>
+
+      <div class="notice-section">
+        <h2>〈공연 내용 안내〉</h2>
+        <p class="danger">- 본 공연에는 유혈 연출 및 마지막 장면에서 자살 장면이 포함되어 있습니다.</p>
+        <p class="danger">- 해당 장면에 민감하신 관객께서는 관람에 각별히 주의해주시기 바랍니다.</p>
+        <p>- 일부 장면에서 큰 음향, 암전, 격한 감정 연기와 비극적 상황 묘사가 포함될 수 있습니다.</p>
+        <p class="small-note">※ 공연 내용에 대한 사전 고지는 관객의 안전한 관람을 위한 안내이며, 이로 인한 예매 취소 및 환불은 예매처 규정에 따릅니다.</p>
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
