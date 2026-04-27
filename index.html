@@ -19,7 +19,7 @@
       color: inherit;
     }
 
-    /* 상단바 */
+    /* 상단 */
     .topbar {
       height: 82px;
       padding: 0 48px;
@@ -59,20 +59,15 @@
       color: #f5d28a;
     }
 
-    /* 메인 */
+    /* 메인 영역 */
     .hero {
       text-align: center;
       padding: 80px 20px 40px;
     }
 
-    .hero h1 {
-      font-size: 32px;
-      margin-bottom: 30px;
-    }
-
     .main-image {
       width: 100%;
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
       border-radius: 20px;
       overflow: hidden;
@@ -87,25 +82,26 @@
     }
 
     .intro {
-      text-align: center;
-      margin-top: 40px;
+      margin-top: 50px;
     }
 
-    .intro h2 {
-      font-size: 36px;
+    .intro h1 {
+      font-size: 42px;
+      margin: 0 0 10px;
       color: #f5d28a;
-      margin-bottom: 10px;
+      letter-spacing: 2px;
     }
 
     .intro p {
       font-size: 18px;
       color: #f7e6c6;
+      margin: 0;
     }
 
     /* 바로가기 */
     .quick {
       max-width: 1100px;
-      margin: 80px auto;
+      margin: 90px auto;
       padding: 0 20px;
     }
 
@@ -151,6 +147,19 @@
       color: #555;
     }
 
+    /* 반응형 */
+    @media (max-width: 800px) {
+      .nav { display: none; }
+
+      .quick-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .main-image img {
+        height: 50vh;
+      }
+    }
+
   </style>
 </head>
 
@@ -174,16 +183,16 @@
 
   <!-- 메인 -->
   <section class="hero">
-    <h1>극단 동화나라 홈페이지에 오신걸 환영합니다</h1>
 
     <div class="main-image">
       <img src="dongwha.png">
     </div>
 
     <div class="intro">
-      <h2>DONGHWA NARA</h2>
+      <h1>DONGHWA NARA</h1>
       <p>환상과 현실이 만나는 무대, 극단 동화나라</p>
     </div>
+
   </section>
 
   <!-- 바로가기 -->
@@ -196,7 +205,7 @@
       <a href="theater.html" class="quick-card">
         <div class="quick-num">01</div>
         <h3>극단 소개</h3>
-        <p>극단 동화나라의 역사와 철학을 확인할 수 있습니다.</p>
+        <p>극단의 역사와 철학을 확인할 수 있습니다.</p>
       </a>
 
       <a href="show.html" class="quick-card">
@@ -214,7 +223,7 @@
       <a href="archive.html" class="quick-card">
         <div class="quick-num">04</div>
         <h3>자료실</h3>
-        <p>공지사항, 포스터, 캐스팅 정보를 확인할 수 있습니다.</p>
+        <p>공지사항과 포스터, 캐스팅 정보를 확인할 수 있습니다.</p>
       </a>
 
     </div>
