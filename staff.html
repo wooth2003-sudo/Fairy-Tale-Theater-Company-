@@ -5,9 +5,7 @@
   <title>배우 / 스태프 소개 | 극단 동화나라</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -16,10 +14,7 @@
       color: #fff7e6;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    a { text-decoration: none; color: inherit; }
 
     .topbar {
       height: 82px;
@@ -61,13 +56,11 @@
       font-weight: 800;
     }
 
-    .nav a:hover {
-      color: #f5d28a;
-    }
+    .nav a:hover { color: #f5d28a; }
 
     .page-title {
       text-align: center;
-      padding: 75px 20px 50px;
+      padding: 75px 20px 45px;
     }
 
     .page-title h1 {
@@ -82,29 +75,38 @@
       font-size: 17px;
     }
 
-    .staff-wrap {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 20px 24px 100px;
-      display: grid;
-      gap: 28px;
+    .section-title {
+      max-width: 1120px;
+      margin: 35px auto 22px;
+      padding: 0 24px;
+      font-size: 28px;
+      color: #f5d28a;
     }
 
-    .profile-card {
+    .people-grid {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px 50px;
       display: grid;
-      grid-template-columns: 170px 1fr;
-      gap: 32px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+    }
+
+    .person-card {
       background: #fff7e6;
       color: #1b1114;
       border-radius: 18px;
-      padding: 30px;
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 24px;
       box-shadow: 0 18px 42px rgba(0,0,0,0.28);
       border: 1px solid rgba(245,210,138,0.55);
     }
 
     .portrait {
-      width: 170px;
-      height: 210px;
+      width: 130px;
+      height: 160px;
       border-radius: 14px;
       background:
         radial-gradient(circle at top, rgba(245,210,138,0.35), transparent 45%),
@@ -112,77 +114,58 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 64px;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15);
+      font-size: 54px;
     }
 
-    .profile-info h2 {
+    .person-card h2 {
       margin: 0;
-      font-size: 30px;
+      font-size: 27px;
       color: #4b0f1f;
     }
 
     .role {
       margin-top: 8px;
       font-size: 15px;
-      font-weight: 800;
+      font-weight: 900;
       color: #8a1538;
     }
 
+    .desc {
+      margin: 16px 0 0;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #3d3030;
+    }
+
     .tag-box {
-      margin: 18px 0;
+      margin-top: 14px;
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
 
     .tag {
-      padding: 7px 12px;
+      padding: 6px 11px;
       border-radius: 999px;
       background: #4b0f1f;
       color: #fff7e6;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 800;
     }
 
-    .desc {
-      font-size: 16px;
-      line-height: 1.9;
-      color: #3d3030;
-      margin: 0;
+    @media (max-width: 850px) {
+      .topbar { padding: 0 20px; }
+      .nav { display: none; }
+      .people-grid { grid-template-columns: 1fr; }
     }
 
-    .note {
-      margin-top: 18px;
-      padding: 16px 18px;
-      border-left: 5px solid #8a1538;
-      background: #f4ead8;
-      color: #3d3030;
-      line-height: 1.8;
-      font-size: 15px;
-    }
-
-    .important {
-      color: #8a1538;
-      font-weight: 900;
-    }
-
-    @media (max-width: 760px) {
-      .topbar {
-        padding: 0 20px;
-      }
-
-      .nav {
-        display: none;
-      }
-
-      .profile-card {
+    @media (max-width: 560px) {
+      .person-card {
         grid-template-columns: 1fr;
       }
 
       .portrait {
         width: 100%;
-        height: 190px;
       }
     }
   </style>
@@ -206,136 +189,88 @@
 
   <section class="page-title">
     <h1>배우 / 스태프 소개</h1>
-    <p>극단 동화나라의 무대를 완성하는 주요 인물들을 소개합니다.</p>
+    <p>극단 동화나라의 무대를 함께 만들어가는 배우와 스태프를 소개합니다.</p>
   </section>
 
-  <main class="staff-wrap">
+  <h2 class="section-title">배우 소개</h2>
 
-    <section class="profile-card">
+  <main class="people-grid">
+
+    <section class="person-card">
       <div class="portrait">👑</div>
-      <div class="profile-info">
+      <div>
         <h2>여배우</h2>
-        <div class="role">29세 · 극단 동화나라 주연배우</div>
-
+        <div class="role">주연배우 · 극단 동화나라 대표 배우</div>
+        <p class="desc">
+          깊은 감정 표현과 강한 무대 장악력으로 관객의 사랑을 받아온 극단 동화나라의 대표 배우입니다.
+          고전극부터 창작극까지 폭넓은 작품에서 중심 역할을 맡아왔습니다.
+        </p>
         <div class="tag-box">
-          <span class="tag">주연배우</span>
+          <span class="tag">주연</span>
           <span class="tag">로미오와 줄리엣</span>
-          <span class="tag">극단의 얼굴</span>
-        </div>
-
-        <p class="desc">
-          대한민국 최고의 극단 동화나라를 대표하는 주연배우. 뛰어난 스타성과 강한 무대 장악력으로
-          수많은 작품의 주연을 맡아왔다. 고열에도 무대에 오를 만큼 공연에 대한 집착과 열정이 강한 인물로 알려져 있다.
-        </p>
-
-        <div class="note">
-          최근 해외 촬영 스케줄을 이유로 공연 일정 변경을 요구한 것으로 알려져 있으며,
-          주변 인물들과 여러 갈등이 있었던 것으로 전해진다.
+          <span class="tag">대표 배우</span>
         </div>
       </div>
     </section>
 
-    <section class="profile-card">
+    <section class="person-card">
       <div class="portrait">🎭</div>
-      <div class="profile-info">
+      <div>
         <h2>배조연</h2>
-        <div class="role">29세 · 극단 동화나라 조연배우</div>
-
+        <div class="role">배우 · 액션 대역 / 조연</div>
+        <p class="desc">
+          섬세한 동작과 안정적인 무대 호흡을 바탕으로 다양한 배역을 소화해온 배우입니다.
+          작품 속 장면의 완성도를 높이는 조연 및 대역 연기로 무대에 힘을 더하고 있습니다.
+        </p>
         <div class="tag-box">
-          <span class="tag">조연배우</span>
+          <span class="tag">조연</span>
           <span class="tag">액션 대역</span>
-          <span class="tag">10년 차 단원</span>
-        </div>
-
-        <p class="desc">
-          10년 전 여배우와 함께 극단 동화나라에 수석으로 입단한 배우. 데뷔 당시 큰 기대를 받았지만,
-          여배우가 주연을 독점하면서 점차 무대의 중심에서 멀어졌다.
-          이번 공연에서도 주연이 아닌 액션 대역에 가까운 역할을 맡았다.
-        </p>
-
-        <div class="note">
-          사건 당일 여배우의 대기실에서 신작 오디션 기회를 부탁했으나 거절당했고,
-          <span class="important">격한 감정 대립</span>이 있었다.
+          <span class="tag">무대 호흡</span>
         </div>
       </div>
     </section>
 
-    <section class="profile-card">
-      <div class="portrait">🧾</div>
-      <div class="profile-info">
-        <h2>여남동</h2>
-        <div class="role">25세 · 여배우의 남동생 / 극단 스태프</div>
-
-        <div class="tag-box">
-          <span class="tag">전담 스태프</span>
-          <span class="tag">가족 관계</span>
-          <span class="tag">무대 보조</span>
-        </div>
-
+    <section class="person-card">
+      <div class="portrait">🎩</div>
+      <div>
+        <h2>남배우</h2>
+        <div class="role">배우 · 조연</div>
         <p class="desc">
-          여배우의 남동생이자 극단 동화나라의 스태프. 어린 시절부터 누나의 전담 보조처럼 살아왔으며,
-          극단 내에서 각종 잡일과 무대 보조를 맡아왔다.
-          겉으로는 누나를 가장 가까이에서 챙기는 인물처럼 보인다.
+          여러 작품에서 감초 역할과 앙상블을 맡아온 배우입니다.
+          안정적인 발성과 자연스러운 연기로 작품의 분위기를 부드럽게 이어주는 역할을 하고 있습니다.
         </p>
-
-        <div class="note">
-          최근 부모님의 요양원 미납 고지서를 확인하면서 가족 문제와 관련된
-          <span class="important">심각한 갈등</span>이 드러났다.
-        </div>
-      </div>
-    </section>
-
-    <section class="profile-card">
-      <div class="portrait">🎬</div>
-      <div class="profile-info">
-        <h2>민연출</h2>
-        <div class="role">35세 · 로미오와 줄리엣 총괄 연출</div>
-
         <div class="tag-box">
-          <span class="tag">총괄 연출</span>
-          <span class="tag">완벽주의자</span>
-          <span class="tag">극장 책임자</span>
-        </div>
-
-        <p class="desc">
-          과거 천재 연출가로 불렸으나 최근 작품들이 연달아 실패하면서 큰 부담을 안게 된 인물.
-          이번 로미오와 줄리엣에 모든 재산과 명예를 걸었다.
-          무대 위 작은 소품과 배우의 동선까지 직접 확인하는 강한 완벽주의 성향을 지녔다.
-        </p>
-
-        <div class="note">
-          피해자가 공연 도중 하차 의사를 밝히자 강하게 반발했으며,
-          이번 공연의 실패를 누구보다 두려워하고 있었다.
-        </div>
-      </div>
-    </section>
-
-    <section class="profile-card">
-      <div class="portrait">📱</div>
-      <div class="profile-info">
-        <h2>매니저</h2>
-        <div class="role">37세 · 여배우 전담 매니저</div>
-
-        <div class="tag-box">
-          <span class="tag">전담 매니저</span>
-          <span class="tag">스케줄 관리</span>
-          <span class="tag">사생활 관리</span>
-        </div>
-
-        <p class="desc">
-          10년 넘게 여배우의 곁을 지키며 모든 스케줄과 사생활을 관리해온 매니저.
-          핸드폰 비밀번호, 계좌 정보, 연애사까지 알고 있을 만큼 깊은 신뢰 관계를 유지해왔다.
-          그러나 그 신뢰가 최근 크게 흔들리기 시작했다.
-        </p>
-
-        <div class="note">
-          여배우의 돈을 몰래 빼돌린 사실이 들통났고,
-          사건 전날 해고와 자수를 요구받은 상태였다.
+          <span class="tag">조연</span>
+          <span class="tag">앙상블</span>
+          <span class="tag">감초 역할</span>
         </div>
       </div>
     </section>
 
   </main>
+
+  <h2 class="section-title">스태프 소개</h2>
+
+  <section class="people-grid">
+
+    <section class="person-card">
+      <div class="portrait">🎬</div>
+      <div>
+        <h2>민연출</h2>
+        <div class="role">총괄 연출 · 로미오와 줄리엣</div>
+        <p class="desc">
+          무대 구성, 배우 동선, 소품 디테일까지 세밀하게 조율하는 연출가입니다.
+          고전 작품을 현대적인 감각으로 재해석하며 극단 동화나라의 무대 완성도를 이끌고 있습니다.
+        </p>
+        <div class="tag-box">
+          <span class="tag">총괄 연출</span>
+          <span class="tag">무대 구성</span>
+          <span class="tag">고전 재해석</span>
+        </div>
+      </div>
+    </section>
+
+  </section>
 
 </body>
 </html>
