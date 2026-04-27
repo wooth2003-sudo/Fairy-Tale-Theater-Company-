@@ -24,7 +24,7 @@
       padding: 0 48px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      position: relative;
       background: rgba(20, 0, 5, 0.95);
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
@@ -35,6 +35,7 @@
       gap: 12px;
       font-size: 24px;
       font-weight: 900;
+      z-index: 2;
     }
 
     .logo-mark {
@@ -48,10 +49,15 @@
       border: 2px solid #f5d28a;
     }
 
+    /* 메뉴 중앙 고정 */
     .nav {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
-      gap: 40px;
-      font-weight: 800;
+      gap: 48px;
+      font-weight: 900;
+      white-space: nowrap;
     }
 
     .nav a:hover {
@@ -133,6 +139,7 @@
       transition: 0.3s;
       display: block;
       min-height: 175px;
+      cursor: pointer;
     }
 
     .quick-card:hover {
@@ -157,6 +164,51 @@
       line-height: 1.6;
       color: #555;
       margin: 0;
+    }
+
+    /* history.png 팝업 */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.86);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-box {
+      position: relative;
+      max-width: 92vw;
+      max-height: 90vh;
+    }
+
+    .modal-box img {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 14px;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.6);
+      display: block;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: -18px;
+      right: -18px;
+      width: 42px;
+      height: 42px;
+      border: none;
+      border-radius: 50%;
+      background: #f5d28a;
+      color: #3a0816;
+      font-size: 28px;
+      font-weight: 900;
+      cursor: pointer;
     }
 
     @media (max-width: 900px) {
@@ -208,11 +260,11 @@
 
       <div class="quick-grid">
 
-        <a href="theater.html" class="quick-card">
+        <div class="quick-card" onclick="openHistory()">
           <div class="quick-num">01</div>
           <h3>극단 소개</h3>
           <p>극단의 역사와 철학을 확인할 수 있습니다.</p>
-        </a>
+        </div>
 
         <a href="show.html" class="quick-card">
           <div class="quick-num">02</div>
@@ -236,6 +288,23 @@
     </section>
 
   </main>
+
+  <div id="historyModal" class="modal" onclick="closeHistory()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="close-btn" onclick="closeHistory()">×</button>
+      <img src="history.png" alt="극단 동화나라 연혁">
+    </div>
+  </div>
+
+  <script>
+    function openHistory() {
+      document.getElementById("historyModal").classList.add("active");
+    }
+
+    function closeHistory() {
+      document.getElementById("historyModal").classList.remove("active");
+    }
+  </script>
 
 </body>
 </html>
