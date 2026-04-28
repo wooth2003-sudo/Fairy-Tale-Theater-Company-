@@ -410,11 +410,13 @@
   }
 
   function staffLogin() {
-    const code = document.getElementById("staffCode").value;
+    const code = document.getElementById("staffCode").value.trim();
     const msg = document.getElementById("loginMsg");
 
     if (code === "ADMIN") {
       window.location.href = "admin.html";
+    } else if (code.toLowerCase() === "othello") {
+      window.location.href = "othello.html";
     } else {
       msg.style.display = "block";
     }
