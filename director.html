@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>극단장 전용 페이지</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+      background: linear-gradient(180deg, #1a0308, #4b0f1f);
+      color: #f5e6c4;
+    }
+
+    .topbar {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+      background: rgba(20, 0, 5, 0.95);
+      border-bottom: 1px solid rgba(245,210,138,0.25);
+      font-weight: 900;
+      color: #f5d28a;
+      font-size: 22px;
+    }
+
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 70px 24px;
+    }
+
+    .panel {
+      background: rgba(255,247,230,0.06);
+      border: 1px solid rgba(245,210,138,0.35);
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      color: #f5d28a;
+      font-size: 34px;
+    }
+
+    .desc {
+      color: #d8c39a;
+      margin-bottom: 36px;
+      line-height: 1.8;
+    }
+
+    .file-area {
+      padding: 24px;
+      border-radius: 14px;
+      background: rgba(0,0,0,0.28);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .file-link {
+      color: #4da3ff;
+      font-size: 18px;
+      font-weight: 800;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .file-link:hover {
+      color: #8cc6ff;
+    }
+
+    .small {
+      margin-top: 12px;
+      color: #9f8f72;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    극단장 전용 페이지
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <h1>DIRECTOR ACCESS</h1>
+      <p class="desc">
+        극단 동화나라 내부 관리 문서 보관 페이지입니다.<br>
+        등록된 계약 문서 및 사본 자료를 열람할 수 있습니다.
+      </p>
+
+      <div class="file-area">
+        <a href="othello.html" class="file-link">계약서 사본 보관.png</a>
+        <div class="small">마지막 수정일: 2021-08-15</div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
