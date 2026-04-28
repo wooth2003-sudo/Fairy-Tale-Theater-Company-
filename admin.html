@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>직원 카드키 정보</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+      background: radial-gradient(circle at 50% 30%, #5a0012 0%, #2b0007 60%, #140003 100%);
+      color: #f5e6c4;
+    }
+
+    .topbar {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(20, 0, 5, 0.95);
+      border-bottom: 1px solid rgba(245,210,138,0.25);
+      color: #f5d28a;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 70px 24px;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .title h1 {
+      font-size: 38px;
+      margin: 0 0 12px;
+      color: #f5d28a;
+    }
+
+    .title p {
+      margin: 0;
+      color: #d8c39a;
+    }
+
+    .card-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .key-card {
+      display: grid;
+      grid-template-columns: 1fr 120px 220px;
+      align-items: center;
+      gap: 20px;
+      padding: 24px 28px;
+      border-radius: 16px;
+      background: rgba(255, 247, 230, 0.08);
+      border: 1px solid rgba(245,210,138,0.32);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+    }
+
+    .name {
+      font-size: 24px;
+      font-weight: 900;
+      color: #fff1cf;
+    }
+
+    .role {
+      margin-top: 6px;
+      color: #cdb58a;
+      font-size: 14px;
+    }
+
+    .age {
+      font-size: 18px;
+      font-weight: 900;
+      color: #f5d28a;
+      text-align: center;
+    }
+
+    .key-code {
+      padding: 12px 16px;
+      border-radius: 10px;
+      background: #120407;
+      border: 1px solid rgba(245,210,138,0.45);
+      color: #f5d28a;
+      font-size: 18px;
+      font-weight: 900;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .notice {
+      margin-top: 36px;
+      padding: 22px;
+      border-radius: 14px;
+      background: rgba(0,0,0,0.32);
+      color: #d8c39a;
+      line-height: 1.8;
+      border-left: 5px solid #f5d28a;
+    }
+
+    @media (max-width: 700px) {
+      .key-card {
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+
+      .age {
+        text-align: left;
+      }
+
+      .key-code {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    STAFF ACCESS CARD DATABASE
+  </header>
+
+  <main class="wrap">
+
+    <section class="title">
+      <h1>직원 카드키 정보</h1>
+      <p>극단 동화나라 내부 출입 카드키 등록 현황</p>
+    </section>
+
+    <section class="card-list">
+
+      <div class="key-card">
+        <div>
+          <div class="name">여배우</div>
+          <div class="role">주연배우 · 극단 대표</div>
+        </div>
+        <div class="age">29세</div>
+        <div class="key-code">971129-YBW</div>
+      </div>
+
+      <div class="key-card">
+        <div>
+          <div class="name">민연출</div>
+          <div class="role">총괄 연출</div>
+        </div>
+        <div class="age">35세</div>
+        <div class="key-code">910214-MIN</div>
+      </div>
+
+      <div class="key-card">
+        <div>
+          <div class="name">매니저</div>
+          <div class="role">전담 매니저</div>
+        </div>
+        <div class="age">37세</div>
+        <div class="key-code">890706-MNG</div>
+      </div>
+
+      <div class="key-card">
+        <div>
+          <div class="name">여남동</div>
+          <div class="role">무대 스태프</div>
+        </div>
+        <div class="age">25세</div>
+        <div class="key-code">010512-YND</div>
+      </div>
+
+      <div class="key-card">
+        <div>
+          <div class="name">배조연</div>
+          <div class="role">조연배우</div>
+        </div>
+        <div class="age">29세</div>
+        <div class="key-code">970418-BJY</div>
+      </div>
+
+      <div class="key-card">
+        <div>
+          <div class="name">남배우</div>
+          <div class="role">로미오 역 · 조연배우</div>
+        </div>
+        <div class="age">29세</div>
+        <div class="key-code">970903-NBW</div>
+      </div>
+
+    </section>
+
+    <div class="notice">
+      ※ 본 자료는 극단 동화나라 내부 직원 출입 카드키 등록 정보입니다.<br>
+      ※ 카드키 분실 또는 이상 사용 발견 시 즉시 운영팀에 보고 바랍니다.
+    </div>
+
+  </main>
+
+</body>
+</html>
